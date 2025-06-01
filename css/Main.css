@@ -12,16 +12,16 @@ main {
   gap: 5px;
 }
 main ::-webkit-scrollbar {
-  background-color: transparent;
+  display: none;
 }
 
 main aside {
-  width: 25vw;
+  flex: 1;
   position: relative;
   background-color: var(--bg-color);
   padding: 16px;
   border-radius: 5px;
-  height: 86vh;
+  height: 100%;
   position: relative;
 }
 .library {
@@ -38,6 +38,42 @@ main aside {
 }
 .ri-add-line {
   font-size: 18px;
+}
+.card-section .songList div:nth-child(1) {
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 7px;
+  padding: 7px 6px;
+}
+.songs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.songs li {
+  font-size: 14px;
+  margin-top: 5px;
+  list-style: decimal;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  align-items: center;
+  padding: 7px 10px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.songs li:hover {
+  background-color: #1e1e1e;
+  scale: 1.03;
+}
+.songs .song-name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 .card-section {
   height: 40vh;
@@ -125,7 +161,7 @@ main aside {
 }
 
 .section-right {
-  width: 75vw;
+  flex: 3;
   position: relative;
   background-color: #121212;
   border-radius: 7px;
