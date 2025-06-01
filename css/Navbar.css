@@ -1,0 +1,182 @@
+:root {
+  --fontColo: #b3b3b3;
+}
+nav {
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  font-family: custom-font-regular, sans-serif;
+}
+.left {
+  gap: 30px;
+  align-items: center;
+}
+.logo {
+  gap: 7px;
+}
+.logo .ri-spotify-fill {
+  font-size: 44px;
+}
+.logo .ri-home-5-fill {
+  font-size: 20px;
+  color: var(--fontColo);
+}
+
+.rounded {
+  width: 45px;
+
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.rounded:hover {
+  background-color: #2a2a2a;
+}
+.rounded:hover > .ri-home-5-fill {
+  color: white;
+}
+
+.search {
+  max-width: 600px;
+  display: flex;
+  width: 400px;
+  padding: 10px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  background-color: #1f1f1f;
+  transition: all 0.2s linear;
+}
+.search:hover {
+  background-color: #2a2a2a;
+}
+.search:focus-within {
+  border: 2px solid white;
+}
+.search-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-grow: 1;
+}
+.search input {
+  padding: 7px;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-family: custom-font-regular, sans-serif;
+}
+
+.search input::placeholder {
+  color: #b3b3b3;
+  font-family: custom-font-regular, sans-serif;
+}
+.search input:focus-within:placeholder {
+  color: white;
+}
+.search .ri-search-line,
+.ri-folder-music-line {
+  font-size: 30px;
+}
+
+.icons {
+  gap: 9px;
+}
+.icons .line {
+  width: 1px;
+  height: 20px;
+
+  background: lightblue;
+}
+.right {
+  gap: 18px;
+}
+
+.right .line {
+  width: 1px;
+  height: 20px;
+
+  background: lightblue;
+}
+.right .links {
+  list-style: none;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--fontColo);
+  font-family: font-bold, sans-serif;
+}
+.right .links li:hover {
+  scale: 1.05;
+  color: white;
+}
+
+.btn .install {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn .install i {
+  font-size: 20px;
+}
+.btn .install button {
+  background-color: transparent;
+  color: var(--fontColo);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.1s linear;
+  font-family: custom-font-regular, sans-serif;
+
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn .install button:hover {
+  color: white;
+  scale: 1.05;
+}
+.btn {
+  gap: 20px;
+}
+.btn button {
+  background-color: transparent;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: var(--fontColo);
+  font-family: custom-font-regular, sans-serif;
+}
+.btn button:hover {
+  color: white;
+  scale: 1.05;
+}
+.right .login button {
+  width: 100px;
+  font-weight: 700;
+  background-color: white;
+  color: black;
+  padding: 15px 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-family: custom-font-regular, sans-serif;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+.right .login button:hover {
+  scale: 1.045;
+}

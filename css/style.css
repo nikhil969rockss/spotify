@@ -1,0 +1,41 @@
+@font-face {
+  font-family: font-light;
+  src: url("../fonts/SpotifyMix-Light.ttf");
+}
+
+@font-face {
+  font-family: custom-font-regular;
+  src: url("../fonts/SpotifyMix-Regular.ttf");
+}
+@font-face {
+  font-family: font-medium;
+  src: url("../fonts/SpotifyMix-Medium.ttf");
+}
+@font-face {
+  font-family: font-bold;
+  src: url("../fonts/SpotifyMix-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
