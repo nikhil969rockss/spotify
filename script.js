@@ -15,13 +15,45 @@ async function getMusicData() {
     console.log(error);
   }
 }
+
 let audio = new Audio();
-function playMusic(music) {
+function toggleIcon(iconElement, isPlaying) {
+  iconElement.className = isPlaying ? "ri-pause-line" : "ri-play-large-fill";
+}
+document.addEventListener("keypress", (e) => {
+  const active = document.querySelector(".songs .active");
+  e.preventDefault();
+  if (e.code === "Space") {
+    if (active) {
+      const icon = active.querySelector(".play-pause i");
+      toggleIcon(icon, false);
+    }
+  }
+  if (audio.paused) {
+    audio.play();
+
+    const icon = active.querySelector(".play-pause i");
+
+    toggleIcon(icon, true);
+  } else {
+    audio.pause();
+  }
+});
+
+function playMusic(music, song, songList) {
+  songList.forEach((e) => {
+    e.classList.remove("active");
+    const icon = e.querySelector(".play-pause i");
+    toggleIcon(icon, false);
+  });
+  song.classList.add("active");
   music = music.replaceAll(" ", "-");
   const path = "http://127.0.0.1:5500/audio/";
   audio.src = path + music + ".mp3";
-  console.log(audio);
+
   audio.play();
+  const icon = song.querySelector(".play-pause i");
+  toggleIcon(icon, true);
 }
 async function playSong() {
   const musics = await getMusicData();
@@ -36,23 +68,17 @@ async function playSong() {
                     .replaceAll("-", " ")
                     .replaceAll(".mp3", "")}</span
                 >
-                <span><i class="ri-play-large-fill"></i></span>
+                <span class="play-pause"><i class="ri-play-large-fill"></i></span>
               </li>`;
   });
   const musicList = Array.from(
     document.querySelector(".songs").getElementsByTagName("li")
   );
   musicList.forEach((e) => {
-    e.addEventListener("click", () => playMusic(e.innerText));
+    if (e.classList.contains("active")) {
+      e.classList.remove("active");
+    }
+    e.addEventListener("click", () => playMusic(e.innerText, e, musicList));
   });
 }
 playSong();
-
-/*<li>
-                <span class="song-name"
-                  ><i class="ri-music-2-fill"></i>phela phela pyaar</span
-                >
-                <span><i class="ri-play-large-fill"></i></span>
-              </li>
-
-*/

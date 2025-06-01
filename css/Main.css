@@ -52,11 +52,10 @@ main aside {
 .songs {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 .songs li {
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: 16px;
   list-style: decimal;
   display: flex;
   justify-content: space-between;
@@ -66,8 +65,12 @@ main aside {
   transition: all 0.2s ease;
   cursor: pointer;
 }
+.songs li.active {
+  background-color: #1e1e1e;
+}
 .songs li:hover {
   background-color: #1e1e1e;
+  border-radius: 6px;
   scale: 1.03;
 }
 .songs .song-name {
